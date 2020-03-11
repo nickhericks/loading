@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button>start</button>
+    <button class="start-button">Start all</button>
+    <button class="stop-button">Stop all</button>
+
 
     <div id="bar-container">
         <em class="bar"></em>
@@ -17,22 +19,39 @@
         <em class="bar"></em>
     </div>
 
+
+
     <script>
-        const button = document.querySelector("button");
+        const startButton = document.querySelector(".start-button");
+        const stopButton = document.querySelector(".stop-button");
         const bars = Array.from(document.querySelectorAll(".bar"));
-        console.log(bars);
 
+        let isLoading = false;
+
+        
         function loading() {
-            console.log('loading');
-            bars.forEach(bar => {
+            console.log('clicked');
+            isLoading = true;
+
+            while(isLoading) {
+                console.log('loading');
+
+                bars.forEach(bar => {
 
 
-                
-            });
+                    bar.classList.add("grow");
+                });
+            }
         }
 
 
-        button.addEventListener('click', loading);
+        startButton.addEventListener('click', loading);
+
+        stopButton.addEventListener("click", () => {
+            console.log('stop!');
+            isLoading = false;
+        });
+
 
     </script>
 </body>
