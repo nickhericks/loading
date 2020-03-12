@@ -10,20 +10,28 @@
 	<button class="start-button">Start all</button>
 	<button class="stop-button">Stop all</button>
 
-	<div id="bar-container">
+	<!-- <div id="bar-container">
 		<em class="bar"></em>
 		<em class="bar"></em>
 		<em class="bar"></em>
 		<em class="bar"></em>
 		<em class="bar"></em>
-	</div>
+	</div> -->
 
+
+	<div class="bars">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
 
 
 	<script>
 		const startButton = document.querySelector(".start-button");
 		const stopButton = document.querySelector(".stop-button");
-		const bars = Array.from(document.querySelectorAll(".bar"));
+		const bars = Array.from(document.querySelectorAll(".bars div"));
 
 		let isLoading = false;
 
@@ -32,13 +40,20 @@
 			isLoading = true;
 			console.log(isLoading);
 
-			
+			bars.forEach(bar => {
+				bar.classList.add('loading');
+			});
+
+
 		}
 
 
 		function cancelAll() {
 			isLoading = false;
 			console.log(isLoading);
+			bars.forEach(bar => {
+				bar.classList.remove('loading');
+			});
 		}
 
 
