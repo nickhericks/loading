@@ -1,3 +1,8 @@
+:root {
+	--main-load-color: #000;
+}
+
+
 body {
     margin: 0;
 }
@@ -28,50 +33,50 @@ button {
 
 @keyframes bars {
   0% { transform: scaleY(1) }
-  25% { transform: scaleY(2.2) }
+  25% { transform: scaleY(6) }
   50% { transform: scaleY(1) }
   75% { transform: scaleY(1) }
   100% { transform: scaleY(1) }
 }
 
 .bars div {
-  width: 14px;
-  height: 40px;
+  width: 10px;
+  height: 10px;
 	margin: 5px;
-	border-radius: 5px;
+	/* border-radius: 2rem; */
 }
 
 .loading {
-	animation: bars 1.4s cubic-bezier(0.5,0,0.5,1) infinite;
+	animation: bars 2s cubic-bezier(0.5,0,0.5,1) infinite;
 }
 
 .bars div:nth-child(1) {
-  background: #000000;
-  /* background: #e15b64; */
+  /* background: var(--main-load-color); */
+  background: #e15b64;
   animation-delay: 0s;
 }
 
 .bars div:nth-child(2) {
-  background: #000000;
-  /* background: #f47e60; */
+  /* background: var(--main-load-color); */
+  background: #f47e60;
   animation-delay: 0.2s;
 }
 
 .bars div:nth-child(3) {
-  background: #000000;
-  /* background: #f8b26a; */
+  /* background: var(--main-load-color); */
+  background: #f8b26a;
   animation-delay: 0.4s;
 }
 
 .bars div:nth-child(4) {
-  background: #000000;
-  /* background: #abbd81; */
+  /* background: var(--main-load-color); */
+  background: #abbd81;
   animation-delay: 0.6s;
 }
 
 .bars div:nth-child(5) {
-  background: #000000;
-  /* background: #417de4; */
+  /* background: var(--main-load-color); */
+  background: #417de4;
   animation-delay: 0.8s;
 }
 
